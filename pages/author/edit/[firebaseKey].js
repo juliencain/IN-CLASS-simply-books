@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import BookForm from '../../../components/forms/BookForm';
-import { getSingleBook } from '../../../api/bookData';
+import { getSingleAuthor } from '../../../api/authorData';
+import AuthorForm from '../../../components/forms/AuthorForm';
 
 export default function EditBook() {
   const [editItem, setEditItem] = useState({});
@@ -9,8 +9,8 @@ export default function EditBook() {
   const { firebaseKey } = router.query;
 
   useEffect(() => {
-    getSingleBook(firebaseKey).then(setEditItem);
+    getSingleAuthor(firebaseKey).then(setEditItem);
   }, [firebaseKey]);
 
-  return (<BookForm obj={editItem} />);
+  return (<AuthorForm obj={editItem} />);
 }
