@@ -1,9 +1,8 @@
 import { clientCredentials } from '../utils/client';
-// API CALLS FOR BOOKS
 
 const endpoint = clientCredentials.databaseURL;
 
-const getBooks = (uid) => new Promise((resolve, reject) => {
+const getBooks = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books.json`, {
     method: 'GET',
     headers: {
@@ -15,7 +14,6 @@ const getBooks = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DONE: DELETE BOOK
 const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -41,7 +39,6 @@ const getSingleBook = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-
 const createBook = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books.json`, {
     method: 'POST',
@@ -54,7 +51,6 @@ const createBook = (payload) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
-
 
 const updateBook = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books/${payload.firebaseKey}.json`, {

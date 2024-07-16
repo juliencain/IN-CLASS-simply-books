@@ -45,7 +45,6 @@ const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXED: DELETE AUTHOR
 const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -58,7 +57,6 @@ const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXED: UPDATE AUTHOR
 const updateAuthor = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors/${payload.firebaseKey}.json`, {
     method: 'PATCH',
@@ -72,7 +70,6 @@ const updateAuthor = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DONE: GET A SINGLE AUTHOR'S BOOKS
 const getAuthorBooks = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books.json?orderBy="author_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',

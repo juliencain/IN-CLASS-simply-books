@@ -24,7 +24,6 @@ function Authors() {
         <Button>Add an Author</Button>
       </Link>
       <div className="d-flex flex-wrap">
-        {/* map over authors here using AuthorCard component */}
         {authors.map((author) => (
           <AuthorCard key={author.firebaseKey} authorObj={author} onUpdate={getAllTheAuthors} />
         ))}
