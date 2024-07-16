@@ -28,7 +28,7 @@ const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DONE: GET SINGLE BOOK
+
 const getSingleBook = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books/${firebaseKey}.json`, {
     method: 'GET',
@@ -41,7 +41,7 @@ const getSingleBook = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DONE: CREATE BOOK
+
 const createBook = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books.json`, {
     method: 'POST',
@@ -55,7 +55,7 @@ const createBook = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DONE: UPDATE BOOK
+
 const updateBook = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/books/${payload.firebaseKey}.json`, {
     method: 'PATCH',
